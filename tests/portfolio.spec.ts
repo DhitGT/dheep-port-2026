@@ -44,7 +44,7 @@ test('desktop portfolio loads without runtime errors and all images resolve', as
   await expect(page.locator('#about')).toContainText('Aditya Dwi Saputra Nugraha')
   await expect(page.locator('#magnetic-btn')).toContainText('dheep.co@gmail.com')
   await expect(page.locator('#experience')).toContainText('PT Traspac Makmur Sejahtera')
-  await expect(page.locator('.public-project-card')).toHaveCount(3)
+  await expect(page.locator('.public-project-card')).toHaveCount(4)
   await expect(page.locator('.project-overview')).toHaveCount(3)
   await expect(page.locator('.project-card-stack')).toHaveCount(3)
   await expect(page.locator('.tagcloud-item')).toHaveCount(11)

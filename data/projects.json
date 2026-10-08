@@ -222,5 +222,64 @@
     "url": "https://koppling.dheep.site/",
     "demoLabel": "Live demo",
     "visibility": "Public repository"
+  },
+  {
+    "id": 7,
+    "name": "FOREKS",
+    "title": [
+      "FOREKS"
+    ],
+    "label": "Personal 007 / Web Application",
+    "category": "Personal Project / Web Application",
+    "subtitle": "Extracurricular Management Platform",
+    "projectType": "Extracurricular Management Platform",
+    "role": "Front-End Developer",
+    "description": "A web application for managing school extracurricular organizations, with institution and organization dashboards for members, attendance, cash records, activity reports, and public profiles.",
+    "tags": [
+      "Nuxt 2",
+      "Vue 2",
+      "JavaScript",
+      "Vuex",
+      "Vuetify 2",
+      "Tailwind CSS 3",
+      "Axios",
+      "Quill",
+      "Vue Carousel"
+    ],
+    "features": [
+      {
+        "title": "Institution & Organization Dashboards",
+        "description": "Separate dashboard layouts and pages support institution-level oversight and organization-level administration."
+      },
+      {
+        "title": "Member Management",
+        "description": "Member-management interfaces and API integration support organizing extracurricular membership information."
+      },
+      {
+        "title": "Attendance Management",
+        "description": "Attendance pages include code-based routes and API requests for creating, editing, and deleting attendance records."
+      },
+      {
+        "title": "Cash Records & Activity Reports",
+        "description": "Dedicated interfaces support cash income and expense records alongside organization activity reporting."
+      },
+      {
+        "title": "Public Organization Profiles",
+        "description": "Public pages present organization information, activities, members, and galleries, with a dashboard interface for editing profile content."
+      }
+    ],
+    "highlights": [
+      "Institution & Organization Dashboards: Separate dashboard layouts and pages support institution-level oversight and organization-level administration.",
+      "Member Management: Member-management interfaces and API integration support organizing extracurricular membership information.",
+      "Attendance Management: Attendance pages include code-based routes and API requests for creating, editing, and deleting attendance records.",
+      "Cash Records & Activity Reports: Dedicated interfaces support cash income and expense records alongside organization activity reporting.",
+      "Public Organization Profiles: Public pages present organization information, activities, members, and galleries, with a dashboard interface for editing profile content."
+    ],
+    "image": "/projects/foreks-preview.png",
+    "imageAlt": "FOREKS extracurricular management application interface",
+    "imageCaption": "Homepage screenshot rendered locally from the repository. Dashboard workflows require a separate backend and have not been verified end-to-end.",
+    "github": "https://github.com/DhitGT/FOREKS",
+    "url": null,
+    "visibility": "Public repository"
   }
 ]
