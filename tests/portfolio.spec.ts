@@ -44,7 +44,7 @@ test('desktop portfolio loads without runtime errors and all images resolve', as
   await expect(page.locator('#about')).toContainText('Aditya Dwi Saputra Nugraha')
   await expect(page.locator('#magnetic-btn')).toContainText('dheep.co@gmail.com')
   await expect(page.locator('#experience')).toContainText('PT Traspac Makmur Sejahtera')
-  await expect(page.locator('.public-project-card')).toHaveCount(2)
+  await expect(page.locator('.public-project-card')).toHaveCount(3)
   await expect(page.locator('.project-overview')).toHaveCount(3)
   await expect(page.locator('.project-card-stack')).toHaveCount(3)
   await expect(page.locator('.tagcloud-item')).toHaveCount(11)
@@ -57,12 +57,40 @@ test('desktop portfolio loads without runtime errors and all images resolve', as
     expect(response.headers()['content-type']).toContain('image/')
   }
   await expect(page.locator('a[href$=".pdf"]')).toHaveCount(0)
-  await expect(page.locator('.public-project-link[href="https://github.com/DhitGT/secret-message"]')).toBeAttached()
-  await expect(page.locator('.public-project-link[href="https://www.dheep.site/1945/"]')).toBeAttached()
+  await expect(page.locator('.public-project-link[href="https://github.com/DhitGT/dheepASK"]')).toBeAttached()
+  await expect(page.locator('.public-project-link[href="https://1945.dheep.site"]')).toBeAttached()
   await expect(page.locator('body')).not.toContainText('SHIVAM')
   await page.screenshot({ path: 'test-results/desktop.png', fullPage: true })
   expect(errors).toEqual([])
 })
+
+for (const width of [1440, 390]) {
+  test(`dheepASK project content and links fit at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 })
+    await page.goto('/')
+    await expect(page.locator('#loader')).toBeHidden({ timeout: 15000 })
+    const card = page.locator('.public-project-card').filter({ has: page.getByRole('heading', { name: 'dheepASK', exact: true }) })
+    await card.scrollIntoViewIfNeeded()
+    await expect(card.locator('li')).toHaveCount(5)
+    for (const title of ['Anonymous Questions & Answers', 'Inline Conversations & Threaded Replies', 'Emoji Reactions', 'Invitation-Link Rooms', 'Short Links & QR Sharing']) {
+      await expect(card.locator('strong').filter({ hasText: title })).toBeVisible()
+    }
+    for (const tag of ['Nuxt 4', 'Vue 3', 'TypeScript', 'Tailwind CSS 4', 'Supabase', 'PostgreSQL', 'Emoji Mart', 'Playwright']) {
+      await expect(card.getByText(tag, { exact: true })).toBeVisible()
+    }
+    const image = card.getByAltText('dheepASK anonymous Q&A platform interface')
+    await expect(image).toHaveAttribute('src', '/projects/dheepask-preview.png')
+    expect(await image.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth === 1280 && element.naturalHeight === 800)).toBeTruthy()
+    for (const [label, href] of [['View source', 'https://github.com/DhitGT/dheepASK'], ['Live demo', 'https://ask.dheep.site']]) {
+      await expect(card.getByRole('link', { name: label })).toHaveAttribute('href', href)
+      await expect(card.getByRole('link', { name: label })).toHaveAttribute('target', '_blank')
+      await expect(card.getByRole('link', { name: label })).toHaveAttribute('rel', 'noopener noreferrer')
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy()
+    await expect(page.locator('body')).not.toContainText('SECRET MESSAGE')
+    await card.screenshot({ path: `test-results/dheepask-${width}.png` })
+  })
+}
 
 test('mobile navigation opens, closes, and scrolls to selected section', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })

@@ -9,7 +9,12 @@ export default defineNuxtConfig({
   nitro: { externals: { inline: ['nuxt'] } },
   css: ['~/assets/css/fonts.css', '@fortawesome/fontawesome-free/css/all.min.css', '~/assets/css/main.css'],
   postcss: { plugins: { tailwindcss: {}, autoprefixer: {} } },
-  runtimeConfig: { apiBase: process.env.NUXT_API_BASE || 'http://127.0.0.1:8000/api' },
+  runtimeConfig: {
+    apiBase: process.env.NUXT_API_BASE || 'http://127.0.0.1:8000/api',
+    spotifyClientId: '',
+    spotifyClientSecret: '',
+    spotifyRefreshToken: '',
+  },
   app: {
     head: {
       title: `${profile.name} | ${profile.role}`,

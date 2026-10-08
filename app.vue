@@ -14,6 +14,7 @@ const reboot = () => window.location.reload()
 
 
     <a class="skip-link" href="#work">Skip to projects</a>
+    <SpotifyFloating />
 <!-- NOISE OVERLAY -->
     <div class="noise-overlay"></div>
 
@@ -237,11 +238,20 @@ const reboot = () => window.location.reload()
             <!-- ABOUT -->
             <section id="about" class="py-24 px-6 bg-[#0a0a0a]">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="glass-card md:col-span-2 p-8 md:p-12 hover-trigger">
+    <div class="glass-card developer-about-card md:col-span-2 p-8 md:p-12 hover-trigger">
+      <div class="developer-about-layout">
+        <figure class="developer-portrait">
+          <div class="developer-portrait-glow" aria-hidden="true"></div>
+          <img class="developer-headshot" src="/images/aditya-headshot.png" :alt="`Portrait of ${profile.name}`" width="1122" height="1402" loading="lazy" decoding="async">
+          <figcaption class="developer-portrait-caption"><span>{{ profile.nickname }}</span><span>{{ profile.role }}</span></figcaption>
+        </figure>
+        <div class="developer-about-copy">
       <p class="text-gray-400 text-xs tracking-widest uppercase mb-4">The Developer / About Me</p>
       <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">{{ profile.name }}</h2>
       <p class="text-[#d4ff00] text-sm mb-6">{{ profile.role }} · {{ profile.specialization }}</p>
       <p v-for="paragraph in profile.bio" :key="paragraph" class="text-gray-400 leading-relaxed mb-4">{{ paragraph }}</p>
+        </div>
+      </div>
     </div>
     <div class="glass-card p-8 hover-trigger">
       <p class="text-xs font-mono text-[#d4ff00] mb-8"><span class="animate-pulse">●</span> LIVE STATUS</p>

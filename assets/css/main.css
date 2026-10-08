@@ -544,6 +544,16 @@ html { scroll-padding-top: 90px; overflow-x: clip; }
 .public-project-badge { position: absolute; bottom: 16px; left: 16px; background: #050505dd; color: #d4ff00; padding: 8px 10px; font: 10px monospace; letter-spacing: 1px; }
 .public-project-link { display: inline-flex; align-items: center; gap: 8px; color: #e5e7eb; }
 .public-project-link:hover { color: #d4ff00; }
+.developer-about-layout { display: grid; gap: 32px; align-items: center; }
+.developer-about-copy { min-width: 0; }
+.developer-portrait { position: relative; isolation: isolate; width: 100%; max-width: 300px; aspect-ratio: 4 / 5; margin: 0 auto; overflow: hidden; border: 1px solid #d4ff0033; border-radius: 12px; background: radial-gradient(ellipse at 50% 35%, #d4ff0015, transparent 68%), repeating-linear-gradient(0deg, transparent 0 39px, #ffffff04 39px 40px), repeating-linear-gradient(90deg, transparent 0 39px, #ffffff04 39px 40px), #0a0a0a; }
+.developer-portrait::before { content: ''; position: absolute; inset: 14px; z-index: 2; pointer-events: none; background: linear-gradient(var(--accent), var(--accent)) left top / 24px 2px no-repeat, linear-gradient(var(--accent), var(--accent)) left top / 2px 24px no-repeat, linear-gradient(var(--accent), var(--accent)) right bottom / 24px 2px no-repeat, linear-gradient(var(--accent), var(--accent)) right bottom / 2px 24px no-repeat; opacity: .7; }
+.developer-portrait-glow { position: absolute; width: 75%; aspect-ratio: 1; left: 12.5%; top: 15%; border-radius: 50%; border: 1px solid #d4ff0026; box-shadow: 0 0 60px #d4ff0012, inset 0 0 60px #d4ff000c; }
+.developer-headshot { position: relative; z-index: 1; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(.8) contrast(1.04); transition: transform .5s ease; }
+.developer-portrait:hover .developer-headshot { transform: scale(1.025); }
+.developer-portrait-caption { position: absolute; z-index: 3; bottom: 0; left: 0; right: 0; display: flex; flex-direction: column; gap: 6px; padding: 32px 24px 24px; background: linear-gradient(transparent, #0a0a0aee 45%); font: 10px 'Space Grotesk', monospace; letter-spacing: 1.5px; text-transform: uppercase; color: #9ca3af; }
+.developer-portrait-caption span:first-child { color: var(--accent); font-size: 14px; font-weight: 700; }
+@media (min-width: 1200px) { .developer-about-layout { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 32px; } }
 @media (min-width: 768px) and (max-width: 1023px) { .mission-content { padding: 1.5rem; } }
 @media (max-width: 767px) {
   .project-card-stack, .project-card-stack .mission-wrapper, .project-card-stack .mission-inner { min-height: 0; }
