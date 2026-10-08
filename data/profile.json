@@ -1,0 +1,58 @@
+{
+  "name": "Aditya Dwi Saputra Nugraha",
+  "nickname": "Dhit",
+  "brand": "DHEEP.",
+  "role": "Software Developer",
+  "specialization": "Frontend & Full-Stack Development",
+  "location": "Bekasi, Indonesia",
+  "email": "dheep.co@gmail.com",
+  "company": "PT Traspac Makmur Sejahtera",
+  "timezone": "Asia/Jakarta",
+  "timezoneLabel": "WIB",
+  "status": "Currently working — open to opportunities",
+  "bio": [
+    "I'm a Software Developer based in Bekasi, Indonesia, specializing in modern web applications, real-time communication systems, and enterprise software development.",
+    "My experience spans frontend engineering, backend integration, client-side data management, and application architecture. I enjoy solving complex technical challenges and transforming ideas into reliable, maintainable, and user-friendly digital products.",
+    "I'm particularly interested in software architecture, system design, interactive web experiences, and building technology that solves real-world problems."
+  ],
+  "socials": [
+    { "name": "GitHub", "url": "https://github.com/DhitGT", "icon": "fab fa-github" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/aditya-dwi-saputra-12018628b/", "icon": "fab fa-linkedin" },
+    { "name": "Instagram", "url": "https://www.instagram.com/adtydstn", "icon": "fab fa-instagram" },
+    { "name": "Website", "url": "https://dheep.site/", "icon": "fas fa-globe" }
+  ],
+  "sphere": ["JavaScript", "Vue.js", "Nuxt.js", "SvelteKit", "Laravel", "TypeScript", "Tailwind CSS", "WebRTC", "Socket.IO", "SQLite", "System Design"],
+  "physicsSkills": ["VUE", "NUXT", "SVELTE", "LARAVEL", "HTML", "CSS", "JS", "WEBRTC"],
+  "loadout": [
+    { "name": "VUE / NUXT", "category": "Frontend Engineering", "level": "Advanced", "rarity": "legendary", "icon": "fab fa-vuejs", "tools": "Vue.js · Nuxt.js · Pinia · Nuxt UI" },
+    { "name": "JAVASCRIPT", "category": "Programming Languages", "level": "Advanced", "rarity": "legendary", "icon": "fab fa-js", "tools": "JavaScript · TypeScript (intermediate)" },
+    { "name": "WEB UI", "category": "Interface Development", "level": "Advanced", "rarity": "legendary", "icon": "fas fa-code", "tools": "HTML5 · CSS3 · Tailwind CSS · Responsive design" },
+    { "name": "FRAMEWORKS", "category": "Component Systems", "level": "Intermediate", "rarity": "epic", "icon": "fas fa-layer-group", "tools": "Svelte · SvelteKit · React.js · Vuetify" },
+    { "name": "BACKEND", "category": "APIs & Integration", "level": "Intermediate", "rarity": "epic", "icon": "fab fa-laravel", "tools": "PHP · Laravel · Lumen · Node.js · REST APIs (advanced)" },
+    { "name": "DATABASES", "category": "Data Persistence", "level": "Intermediate", "rarity": "epic", "icon": "fas fa-database", "tools": "PostgreSQL · MySQL · SQLite · IndexedDB" },
+    { "name": "REALTIME", "category": "Communication Systems", "level": "Intermediate", "rarity": "epic", "icon": "fas fa-satellite-dish", "tools": "WebSocket · Socket.IO · WebRTC · LiveKit" },
+    { "name": "OFFLINE", "category": "Browser Infrastructure", "level": "Intermediate", "rarity": "epic", "icon": "fas fa-shield-alt", "tools": "OPFS · Web Workers · WebAssembly integration · Web Crypto · AES-GCM" }
+  ],
+  "engineering": [
+    { "name": "Git & GitHub", "level": "Advanced" },
+    { "name": "Software Debugging", "level": "Advanced" },
+    { "name": "Component-Based Architecture", "level": "Advanced" },
+    { "name": "Modular Architecture", "level": "Intermediate" },
+    { "name": "Software Design Principles", "level": "Intermediate" },
+    { "name": "Performance Optimization", "level": "Intermediate" },
+    { "name": "Web Security Fundamentals", "level": "Intermediate" },
+    { "name": "Testing & Quality Assurance", "level": "Intermediate" },
+    { "name": "PM2", "level": "Intermediate" }
+  ],
+  "experience": [
+    { "title": "SOFTWARE DEVELOPER", "organization": "PT Traspac Makmur Sejahtera", "period": "CURRENT ROLE", "active": true, "description": "Developing and maintaining enterprise web applications with Vue.js, Nuxt.js, and SvelteKit. Working across frontend architecture, backend integration, real-time communication, and offline-first systems.", "highlights": ["Real-time messaging and video meetings with Socket.IO, WebRTC, and LiveKit.", "Encrypted local storage, client-side databases, and data synchronization.", "Modular UI architecture, permission-aware interfaces, debugging, and performance improvements.", "Collaborating with cross-functional teams throughout the development lifecycle."], "note": "Permanent employee since July 2026." },
+    { "title": "ORGANIZATION LEADER", "organization": "KOPPLING · SMK Negeri 2 Kota Bekasi", "period": "LEADERSHIP EXPERIENCE", "active": false, "description": "Led an extracurricular organization of approximately 20 members. Coordinated activities, delegated responsibilities, and encouraged collaboration and active participation.", "highlights": ["Team coordination, communication, and organizational problem-solving."], "note": "" },
+    { "title": "VOCATIONAL GRADUATE", "organization": "SMK Negeri 2 Kota Bekasi", "period": "GRADUATED 2025", "active": false, "description": "Completed vocational secondary education with an interest in programming, web development, and software engineering. Built a foundation in databases, programming logic, and problem-solving.", "highlights": [], "note": "" }
+  ],
+  "process": [
+    { "title": "UNDERSTAND()", "comment": "Identify the problem and constraints.", "description": "Start with user needs, application behavior, and technical requirements. Break complex challenges into clear, manageable tasks." },
+    { "title": "ARCHITECT()", "comment": "Map the system and responsibilities.", "description": "Plan reusable components, service boundaries, state management, and data flows. Keep modules easy to maintain and extend." },
+    { "title": "BUILD()", "comment": "Turn the plan into working software.", "description": "Implement responsive interfaces, integrate APIs, and handle asynchronous events, permissions, and local data." },
+    { "title": "VERIFY()", "comment": "Debug, test, and improve.", "description": "Check edge cases, connection recovery, security, and performance. Collaborate with the team to deliver a reliable product." }
+  ]
+}

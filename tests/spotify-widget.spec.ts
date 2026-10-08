@@ -10,6 +10,11 @@ for (const width of [1440, 390]) {
     await page.goto('/')
     await expect(page.locator('#loader')).toBeHidden({ timeout: 15000 })
     const widget = page.getByRole('complementary', { name: 'Spotify listening activity' })
+    await expect(widget).toHaveClass(/is-collapsed/)
+    await expect(widget.getByRole('progressbar')).toBeHidden()
+    await expect(widget.locator('.spotify-equalizer')).toHaveClass(/is-playing/)
+    await expect(widget.locator('.spotify-compact-title')).toHaveText('Test Track')
+    await widget.getByRole('button', { name: 'Expand Spotify widget' }).click()
     await expect(widget).toContainText('Now playing')
     await expect(widget).toContainText('Test Track')
     await expect(widget).toContainText('Test Artist')
@@ -31,13 +36,14 @@ for (const width of [1440, 390]) {
   })
 }
 
-test('Spotify disconnected state is honest and contains no credentials', async ({ page, request }) => {
-  const response = await request.get('/api/spotify/now-playing')
-  expect(response.ok()).toBeTruthy()
-  const data = await response.json()
-  expect(data).toEqual({ status: 'disconnected', track: null, retryAfterMs: 30000 })
+test('Spotify disconnected state is honest', async ({ page }) => {
+  await page.route('**/api/spotify/now-playing', route => route.fulfill({ json: { status: 'disconnected', track: null, retryAfterMs: 30000 } }))
   await page.goto('/')
-  await expect(page.getByRole('complementary', { name: 'Spotify listening activity' })).toContainText('Spotify is not connected yet.')
+  const widget = page.getByRole('complementary', { name: 'Spotify listening activity' })
+  await expect(widget.locator('.spotify-compact-status')).toHaveText('Not connected')
+  await expect(widget.locator('.spotify-equalizer')).not.toHaveClass(/is-playing/)
+  await widget.getByRole('button', { name: 'Expand Spotify widget' }).click()
+  await expect(widget).toContainText('Spotify is not connected yet.')
 })
 
 test('paused Spotify track freezes elapsed time', async ({ page }) => {
@@ -47,6 +53,9 @@ test('paused Spotify track freezes elapsed time', async ({ page }) => {
   } }))
   await page.goto('/')
   const widget = page.getByRole('complementary', { name: 'Spotify listening activity' })
+  await expect(widget.locator('.spotify-compact-status')).toHaveText('Paused')
+  await expect(widget.locator('.spotify-equalizer')).not.toHaveClass(/is-playing/)
+  await widget.getByRole('button', { name: 'Expand Spotify widget' }).click()
   await expect(widget).toContainText('Paused')
   await expect(widget.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '42')
   await page.waitForTimeout(1200)

@@ -1,4 +1,4 @@
-import profile from '../../data/profile.json'
+import profile from '../data/profile.json'
 
 export function usePortfolioEffects() {
   const cleanup = []

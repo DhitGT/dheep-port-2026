@@ -1,4 +1,4 @@
-import profile from '../data/profile.json'
+import profile from './data/profile.json'
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-10-08',
@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/fonts.css', '@fortawesome/fontawesome-free/css/all.min.css', '~/assets/css/main.css'],
   postcss: { plugins: { tailwindcss: {}, autoprefixer: {} } },
   runtimeConfig: {
-    apiBase: process.env.NUXT_API_BASE || 'http://127.0.0.1:8000/api',
+    apiBase: '',
     spotifyClientId: '',
     spotifyClientSecret: '',
     spotifyRefreshToken: '',

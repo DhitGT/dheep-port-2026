@@ -2,7 +2,9 @@
 import type { SpotifyTrack } from './SpotifyNowPlaying.vue'
 const track = ref<SpotifyTrack | null>(null)
 const status = ref<'loading' | 'idle' | 'unavailable' | 'disconnected'>('loading')
-const collapsed = ref(false)
+const collapsed = ref(true)
+const compactStatus = computed(() => track.value ? (track.value.isPlaying ? 'Now playing' : 'Paused') : ({ loading: 'Checking Spotify', idle: 'Not playing', unavailable: 'Unavailable', disconnected: 'Not connected' })[status.value])
+const compactTitle = computed(() => track.value?.title || 'Spotify')
 let timer: ReturnType<typeof setTimeout> | undefined
 let controller: AbortController | undefined
 let stopped = false
@@ -45,10 +47,14 @@ onBeforeUnmount(() => {
 
 <template>
   <aside class="spotify-floating hover-trigger" :class="{ 'is-collapsed': collapsed }" aria-label="Spotify listening activity">
-    <button class="spotify-collapse" :aria-expanded="!collapsed" :aria-label="collapsed ? 'Expand Spotify widget' : 'Minimize Spotify widget'" @click="collapsed = !collapsed">
-      <i :class="collapsed ? 'fab fa-spotify' : 'fas fa-minus'" aria-hidden="true"></i>
+    <button v-if="collapsed" class="spotify-compact" aria-expanded="false" aria-controls="spotify-details" aria-label="Expand Spotify widget" :title="track ? `${track.title} — ${track.artist}` : compactStatus" @click="collapsed = false">
+      <i class="fab fa-spotify spotify-compact-icon" aria-hidden="true"></i>
+      <span class="spotify-compact-copy"><span class="spotify-compact-status">{{ compactStatus }}</span><span class="spotify-compact-title">{{ compactTitle }}</span></span>
+      <span class="spotify-equalizer" :class="{ 'is-playing': track?.isPlaying }" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      <i class="fas fa-chevron-up spotify-expand-icon" aria-hidden="true"></i>
     </button>
-    <SpotifyNowPlaying v-show="!collapsed" :track="track" :status="status" />
+    <button v-else class="spotify-collapse" aria-expanded="true" aria-controls="spotify-details" aria-label="Minimize Spotify widget" @click="collapsed = true"><i class="fas fa-minus" aria-hidden="true"></i></button>
+    <div id="spotify-details" v-show="!collapsed"><SpotifyNowPlaying :track="track" :status="status" /></div>
   </aside>
 </template>
 
@@ -58,8 +64,23 @@ onBeforeUnmount(() => {
 .spotify-floating :deep(.spotify-widget > div:first-child) { padding-right: 24px; }
 .spotify-collapse { position: absolute; right: 12px; top: 14px; width: 24px; height: 24px; color: #9ca3af; }
 .spotify-collapse:hover { color: #d4ff00; }
-.spotify-floating.is-collapsed { width: 46px; height: 46px; padding: 0; }
-.is-collapsed .spotify-collapse { inset: 0; width: 100%; height: 100%; font-size: 22px; color: #d4ff00; }
+.spotify-floating.is-collapsed { width: 224px; max-width: calc(100vw - 32px); height: 56px; padding: 0; border-radius: 28px; }
+.spotify-compact { display: flex; align-items: center; gap: 12px; width: 100%; height: 100%; padding: 10px 16px; text-align: left; border-radius: inherit; transition: background .2s; }
+.spotify-compact:hover { background: #d4ff0008; }
+.spotify-compact-icon { font-size: 24px; color: #d4ff00; }
+.spotify-compact-copy { flex: 1; min-width: 0; }
+.spotify-compact-status { display: block; font: 9px monospace; letter-spacing: 1px; text-transform: uppercase; color: #d4ff00; margin-bottom: 3px; }
+.spotify-compact-title { display: block; font-size: 11px; color: #d1d5db; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.spotify-expand-icon { font-size: 8px; color: #6b7280; }
+.spotify-equalizer { display: flex; align-items: center; gap: 3px; height: 20px; flex-shrink: 0; color: #6b7280; }
+.spotify-equalizer span { width: 3px; height: 14px; border-radius: 2px; background: currentColor; transform: scaleY(.25); }
+.spotify-equalizer.is-playing { color: #d4ff00; }
+.spotify-equalizer.is-playing span { animation: spotify-bars .8s ease-in-out infinite alternate; }
+.spotify-equalizer.is-playing span:nth-child(2) { animation-delay: -.4s; animation-duration: .65s; }
+.spotify-equalizer.is-playing span:nth-child(3) { animation-delay: -.2s; animation-duration: .9s; }
+.spotify-equalizer.is-playing span:nth-child(4) { animation-delay: -.6s; animation-duration: .75s; }
+@keyframes spotify-bars { from { transform: scaleY(.25); } to { transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) { .spotify-equalizer.is-playing span { animation: none; transform: scaleY(.6); } }
 @media (max-width: 767px) { .spotify-floating { left: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); width: min(280px, calc(100vw - 32px)); } }
 @media (max-height: 500px) { .spotify-floating { bottom: 16px; } }
 </style>

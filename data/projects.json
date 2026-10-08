@@ -1,0 +1,226 @@
+[
+  {
+    "id": 1,
+    "label": "Enterprise 001 / Real-Time Systems",
+    "title": [
+      "REAL-TIME",
+      "PLATFORM"
+    ],
+    "description": "A unified communication platform for messaging, video meetings, and digital collaboration. My work focused on asynchronous events, participant states, connection recovery, and responsive interfaces.",
+    "role": "Frontend / Software Developer",
+    "tags": [
+      "Vue.js",
+      "Nuxt.js",
+      "Pinia",
+      "Socket.IO",
+      "LiveKit",
+      "WebRTC"
+    ],
+    "highlights": [
+      "Private and group messaging, replies, mentions, and file sharing.",
+      "Video meetings with participant controls, adaptive layouts, breakout rooms, and Picture-in-Picture.",
+      "Automatic reconnection, encrypted client-side storage, and meeting state synchronization."
+    ],
+    "image": null,
+    "overview": "communication",
+    "url": null,
+    "github": null,
+    "visibility": "Private / internal application"
+  },
+  {
+    "id": 2,
+    "label": "Enterprise 002 / Offline-First Systems",
+    "title": [
+      "OFFLINE",
+      "ENTERPRISE"
+    ],
+    "description": "An enterprise application built around local data persistence and responsive operation without a continuous connection. I worked on encrypted storage, background database processing, and modular frontend architecture.",
+    "role": "Frontend / Software Developer",
+    "tags": [
+      "SvelteKit",
+      "TypeScript",
+      "SQLite",
+      "IndexedDB",
+      "OPFS",
+      "Web Workers"
+    ],
+    "highlights": [
+      "Local SQLite and OPFS storage with Web Crypto and AES-GCM encryption.",
+      "Background processing and clear repository, service, mapper, and state layers.",
+      "Hierarchical data, local assets, permission-aware interfaces, and outbox synchronization design."
+    ],
+    "image": null,
+    "overview": "storage",
+    "url": null,
+    "github": null,
+    "visibility": "Private / internal application"
+  },
+  {
+    "id": 3,
+    "label": "Enterprise 003 / Access Management",
+    "title": [
+      "ACCESS",
+      "CONTROL"
+    ],
+    "description": "A permission-aware frontend implementation that keeps navigation, actions, and module behavior consistent with assigned access rights. I centralized permission evaluation and reduced repeated access-checking logic.",
+    "role": "Frontend Developer",
+    "tags": [
+      "SvelteKit",
+      "TypeScript",
+      "Modular Architecture",
+      "Access Management"
+    ],
+    "highlights": [
+      "Module and feature-level checks with permission-aware navigation.",
+      "Dynamic action visibility, role-aware rendering, and route-to-module mapping.",
+      "User administration and activity log interfaces; frontend checks complement server-side authorization."
+    ],
+    "image": null,
+    "overview": "access",
+    "url": null,
+    "github": null,
+    "visibility": "Private / internal application"
+  },
+  {
+    "id": 4,
+    "label": "Personal 004 / Browser Game",
+    "title": [
+      "1945",
+      "WAR GAME"
+    ],
+    "description": "A browser game inspired by the Indonesian independence era. An experiment in game logic, animation, player interaction, statistics, a shop, and background music.",
+    "role": "Personal Project Developer",
+    "tags": [
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "highlights": [
+      "Browser gameplay and animation.",
+      "Player statistics and shop functionality."
+    ],
+    "image": "/projects/1945-preview.png",
+    "imageCaption": "Menu preview rendered from the repository's HTML, CSS, and assets.",
+    "url": "https://1945.dheep.site",
+    "github": "https://github.com/DhitGT/1945",
+    "visibility": "Public repository"
+  },
+  {
+    "id": 5,
+    "name": "dheepASK",
+    "label": "Personal 005 / Web Application",
+    "category": "Personal Project / Web Application",
+    "title": [
+      "dheepASK"
+    ],
+    "description": "An anonymous Q&A platform featuring public discussions, threaded replies, emoji reactions, and invitation-link rooms in a responsive dark interface.",
+    "role": "Full-Stack Developer / Personal Project",
+    "projectType": "Anonymous Q&A Platform",
+    "tags": [
+      "Nuxt 4",
+      "Vue 3",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "Supabase",
+      "PostgreSQL",
+      "Emoji Mart",
+      "Playwright"
+    ],
+    "features": [
+      {
+        "title": "Anonymous Questions & Answers",
+        "description": "Ask and answer through automatically created anonymous sessions, without displaying personal identity."
+      },
+      {
+        "title": "Inline Conversations & Threaded Replies",
+        "description": "Open answers within the feed and continue conversations through expandable, nested reply threads."
+      },
+      {
+        "title": "Emoji Reactions",
+        "description": "React to questions, answers, and replies with a picker supporting search, categories, and skin tones."
+      },
+      {
+        "title": "Invitation-Link Rooms",
+        "description": "Create discussion spaces with a title, context, and custom or generated URL, with consistent anonymous aliases within each room."
+      },
+      {
+        "title": "Short Links & QR Sharing",
+        "description": "Share questions using five-letter codes, copyable short URLs, and browser-generated QR codes downloadable as PNG files."
+      }
+    ],
+    "highlights": [
+      "Anonymous Questions & Answers: Ask and answer through automatically created anonymous sessions, without displaying personal identity.",
+      "Inline Conversations & Threaded Replies: Open answers within the feed and continue conversations through expandable, nested reply threads.",
+      "Emoji Reactions: React to questions, answers, and replies with a picker supporting search, categories, and skin tones.",
+      "Invitation-Link Rooms: Create discussion spaces with a title, context, and custom or generated URL, with consistent anonymous aliases within each room.",
+      "Short Links & QR Sharing: Share questions using five-letter codes, copyable short URLs, and browser-generated QR codes downloadable as PNG files."
+    ],
+    "image": "/projects/dheepask-preview.png",
+    "imageAlt": "dheepASK anonymous Q&A platform interface",
+    "imageCaption": "Screenshot of a public discussion on the live dheepASK website.",
+    "url": "https://ask.dheep.site",
+    "demoLabel": "Live demo",
+    "github": "https://github.com/DhitGT/dheepASK",
+    "visibility": "Public repository"
+  },
+  {
+    "id": 6,
+    "name": "KOPPLING",
+    "title": [
+      "KOPPLING"
+    ],
+    "label": "Community 006 / Organization Website",
+    "category": "Community Project / Organization Website",
+    "subtitle": "Student Environmental Community Website",
+    "projectType": "Student Environmental Community Website",
+    "organization": "Komunitas Pelajar Pecinta Lingkungan, SMK Negeri 2 Kota Bekasi",
+    "role": "Web Developer",
+    "description": "A responsive website for a student environmental community, showcasing its mission, activities, alumni, and photo documentation with direct access to membership registration.",
+    "tags": [
+      "Nuxt 2",
+      "Vue 2",
+      "JavaScript",
+      "Vuetify 2",
+      "Tailwind CSS 3",
+      "Firebase Storage",
+      "Vue Carousel",
+      "html-to-image"
+    ],
+    "features": [
+      {
+        "title": "Community Profile & Mission",
+        "description": "Introduces the organization, its environmental focus, and its vision and mission through a structured landing page."
+      },
+      {
+        "title": "Activity Showcase",
+        "description": "Presents event dates, participating generations, and summaries, with detail dialogs for descriptions, locations, and photo galleries."
+      },
+      {
+        "title": "Alumni Showcase",
+        "description": "Displays alumni profiles in a responsive carousel with generation information and external Instagram links."
+      },
+      {
+        "title": "Photo Gallery & Sharing",
+        "description": "Implements a responsive gallery, fullscreen image viewing, a Load More control, and dedicated photo-sharing routes."
+      },
+      {
+        "title": "Registration & Contact Access",
+        "description": "Links to an external Google Form for membership registration, plus community social channels, WhatsApp, and email."
+      }
+    ],
+    "highlights": [
+      "Community Profile & Mission: Introduces the organization, its environmental focus, and its vision and mission through a structured landing page.",
+      "Activity Showcase: Presents event dates, participating generations, and summaries, with detail dialogs for descriptions, locations, and photo galleries.",
+      "Alumni Showcase: Displays alumni profiles in a responsive carousel with generation information and external Instagram links.",
+      "Photo Gallery & Sharing: Implements a responsive gallery, fullscreen image viewing, a Load More control, and dedicated photo-sharing routes.",
+      "Registration & Contact Access: Links to an external Google Form for membership registration, plus community social channels, WhatsApp, and email."
+    ],
+    "image": "/projects/koppling-preview.png",
+    "imageAlt": "KOPPLING student environmental community website homepage",
+    "imageCaption": "Live homepage screenshot. Firebase Storage quota limits prevented complete live verification of the gallery, photo sharing, and PNG export.",
+    "github": "https://github.com/DhitGT/KOPPLING",
+    "url": "https://koppling.dheep.site/",
+    "demoLabel": "Live demo",
+    "visibility": "Public repository"
+  }
+]

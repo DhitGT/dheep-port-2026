@@ -1,7 +1,8 @@
-import fallbackProjects from '../../../data/projects.json'
+import fallbackProjects from '../../data/projects.json'
 
 export default defineEventHandler(async (event) => {
   const { apiBase } = useRuntimeConfig(event)
+  if (!apiBase) return fallbackProjects
   try {
     return await $fetch(`${apiBase}/projects`, { timeout: 2500 })
   } catch {

@@ -1,5 +1,9 @@
 export default defineEventHandler(async (event) => {
   const { apiBase } = useRuntimeConfig(event)
+  if (!apiBase) {
+    setResponseStatus(event, 503)
+    return { message: 'Contact service unavailable.' }
+  }
   const body = await readBody(event)
   try {
     const response = await $fetch.raw(`${apiBase}/contact`, {

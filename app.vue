@@ -1,6 +1,6 @@
 <script setup>
-import fallbackProjects from '../data/projects.json'
-import profile from '../data/profile.json'
+import fallbackProjects from './data/projects.json'
+import profile from './data/profile.json'
 const { data: projects } = await useFetch('/api/projects', { default: () => fallbackProjects })
 const featuredProjects = computed(() => projects.value.filter(project => !project.github))
 const publicProjects = computed(() => projects.value.filter(project => project.github))

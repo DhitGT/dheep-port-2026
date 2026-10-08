@@ -9,5 +9,6 @@ vendor/
 *.zip
 *.log
 backend/database/*.sqlite*
-frontend/test-results/
-frontend/playwright-report/
+test-results/
+playwright-report/
+.vercel/
