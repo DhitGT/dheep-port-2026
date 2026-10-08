@@ -30,6 +30,8 @@ Visitors see the owner's current track without logging in. Only track metadata i
 
 ## Checks
 
+FOREKS uses an authentic screenshot of the repository's public homepage rendered locally at 1280 × 800. Dashboard workflows require a separate API and have not been verified end-to-end. No deployment URL is provided, so the project has only a GitHub link.
+
 - `npm run build`
 - `npm run test:spotify` (mocked Spotify service tests)
 - `npm run test:e2e` (Chrome required; local dev server must be running)
