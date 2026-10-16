@@ -4,14 +4,14 @@
   "brand": "DHEEP.",
   "role": "Software Developer",
   "specialization": "Frontend & Full-Stack Development",
-  "location": "Bekasi, Indonesia",
+  "location": "Jakarta, Indonesia",
   "email": "dheep.co@gmail.com",
   "company": "PT Traspac Makmur Sejahtera",
   "timezone": "Asia/Jakarta",
   "timezoneLabel": "WIB",
   "status": "Currently working — open to opportunities",
   "bio": [
-    "I'm a Software Developer based in Bekasi, Indonesia, specializing in modern web applications, real-time communication systems, and enterprise software development.",
+    "I'm a Software Developer based in Jakarta, Indonesia, specializing in modern web applications, real-time communication systems, and enterprise software development.",
     "My experience spans frontend engineering, backend integration, client-side data management, and application architecture. I enjoy solving complex technical challenges and transforming ideas into reliable, maintainable, and user-friendly digital products.",
     "I'm particularly interested in software architecture, system design, interactive web experiences, and building technology that solves real-world problems."
   ],
@@ -21,7 +21,7 @@
     { "name": "Instagram", "url": "https://www.instagram.com/adtydstn", "icon": "fab fa-instagram" },
     { "name": "Website", "url": "https://dheep.site/", "icon": "fas fa-globe" }
   ],
-  "sphere": ["JavaScript", "Vue.js", "Nuxt.js", "SvelteKit", "Laravel", "TypeScript", "Tailwind CSS", "WebRTC", "Socket.IO", "SQLite", "System Design"],
+  "sphere": ["JavaScript", "Vue.js", "Nuxt.js", "SvelteKit", "Laravel", "TypeScript", "Tailwind CSS", "WebRTC", "Socket.IO", "SQLite", "System Design", "Node.js", "REST APIs", "PostgreSQL", "MySQL", "Pinia", "LiveKit", "IndexedDB", "Web Workers", "OPFS"],
   "physicsSkills": ["VUE", "NUXT", "SVELTE", "LARAVEL", "HTML", "CSS", "JS", "WEBRTC"],
   "loadout": [
     { "name": "VUE / NUXT", "category": "Frontend Engineering", "level": "Advanced", "rarity": "legendary", "icon": "fab fa-vuejs", "tools": "Vue.js · Nuxt.js · Pinia · Nuxt UI" },

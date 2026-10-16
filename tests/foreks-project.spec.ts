@@ -7,6 +7,7 @@ for (const width of [1440, 390]) {
     await expect(page.locator('#loader')).toBeHidden({ timeout: 15000 })
     const card = page.locator('.public-project-card').filter({ has: page.getByRole('heading', { name: 'FOREKS', exact: true }) })
     await card.scrollIntoViewIfNeeded()
+    await card.getByRole('button', { name: 'Expand FOREKS details' }).click()
     await expect(page.locator('.public-project-card')).toHaveCount(4)
     await expect(page.getByRole('heading', { name: 'dheepASK', exact: true })).toBeAttached()
     await expect(page.getByRole('heading', { name: 'KOPPLING', exact: true })).toBeAttached()

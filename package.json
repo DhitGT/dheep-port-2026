@@ -9,7 +9,8 @@
     "postinstall": "nuxt prepare",
     "test:e2e": "playwright test",
     "spotify:connect": "node scripts/spotify-connect.mjs",
-    "test:spotify": "node --test tests/spotify-service.test.mjs"
+    "test:spotify": "node --test tests/spotify-service.test.mjs",
+    "test:arcade": "node --test tests/stack-merge.test.mjs tests/color-match.test.mjs tests/typing-sprint.test.mjs"
   },
   "dependencies": {
     "nuxt": "^4.2.0",

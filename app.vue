@@ -136,7 +136,7 @@ const reboot = () => window.location.reload()
 
                     <!-- 3D Interactive Sphere -->
                     <div class="h-[40vh] md:h-[50vh] flex items-center justify-center relative order-1 md:order-2">
-                        <div class="tagcloud text-sm md:text-base font-bold text-gray-400"></div>
+                        <SkillNetwork />
                         <div class="absolute w-64 h-64 bg-[#d4ff00] rounded-full blur-[120px] opacity-20 -z-10 animate-pulse"></div>
                     </div>
                 </div>
@@ -270,9 +270,10 @@ const reboot = () => window.location.reload()
                 <div class="max-w-7xl mx-auto">
                     <div class="flex flex-col md:flex-row justify-between items-end mb-6">
                         <h2 class="text-3xl md:text-4xl font-display font-bold">THE <span class="text-[#d4ff00]">BREAK ROOM</span></h2>
-                        <p class="text-xs font-mono text-gray-400 uppercase tracking-widest hidden md:block">Interactive Physics / Matter.js</p>
+                        <p class="text-xs font-mono text-gray-400 uppercase tracking-widest hidden md:block">Five ways to take five</p>
                     </div>
-                    <p class="text-gray-500 mb-8 max-w-lg">Drag, throw, and crash the skills. A little chaos engine for your entertainment.</p>
+                    <p class="text-gray-500 mb-8 max-w-lg">Merge code, squash bugs, match colors, find your typing flow, or throw some skills around. Your next commit can wait.</p>
+                    <BreakRoomArcade>
                     <div id="physics-canvas" class="rounded-lg overflow-hidden relative hover-trigger">
                         <div class="absolute top-4 right-4 flex flex-wrap gap-2 z-10 pointer-events-auto">
                              <button id="phy-gravity" class="px-3 py-1 bg-black/50 border border-white/20 text-xs font-mono text-white hover:text-[#d4ff00] hover:border-[#d4ff00] transition-colors backdrop-blur-sm">GRAVITY: ON</button>
@@ -281,6 +282,7 @@ const reboot = () => window.location.reload()
                         </div>
                         <div class="absolute top-4 left-4 text-xs font-mono text-gray-500 z-10 pointer-events-none">INTERACTIVE ZONE</div>
                     </div>
+                    </BreakRoomArcade>
                 </div>
             </section>
 
@@ -289,7 +291,7 @@ const reboot = () => window.location.reload()
   <div class="max-w-7xl mx-auto">
     <div class="flex justify-between items-end mb-6"><h2 class="text-4xl md:text-5xl font-display font-bold">SIDE <span class="text-[#d4ff00]">QUESTS</span></h2><p class="text-xs font-mono text-gray-400 uppercase tracking-widest hidden md:block">Personal / Public GitHub</p></div>
     <p class="text-gray-500 mb-10">Personal projects in browser interaction and full-stack fundamentals.</p>
-    <div class="grid md:grid-cols-2 gap-6"><PublicProjectCard v-for="project in publicProjects" :key="project.id" :project="project" /></div>
+    <div class="grid md:grid-cols-2 gap-6 items-start"><PublicProjectCard v-for="project in publicProjects" :key="project.id" :project="project" /></div>
     <div class="mt-12 text-center"><a href="https://github.com/DhitGT" target="_blank" rel="noopener noreferrer" class="hover-trigger px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest hover:border-[#d4ff00] hover:text-[#d4ff00] transition-all inline-block">Explore GitHub <i class="fab fa-github ml-2" aria-hidden="true"></i></a></div>
   </div>
 </section>
@@ -307,7 +309,7 @@ const reboot = () => window.location.reload()
                     </div>
                     <ContactForm />
 <div class="mt-20 flex flex-col md:flex-row justify-between items-center text-xs font-mono opacity-80 border-t border-black/20 pt-8">
-                        <div>BEKASI, INDONESIA • &copy; {{ new Date().getFullYear() }} {{ profile.name }}</div>
+                        <div>JAKARTA, INDONESIA • &copy; {{ new Date().getFullYear() }} {{ profile.name }}</div>
                         <div class="flex items-center gap-4 mt-4 md:mt-0">
                             <span id="time-display">00:00:00 WIB</span>
                             <span>OPEN TO OPPORTUNITIES</span>

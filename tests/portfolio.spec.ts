@@ -47,7 +47,7 @@ test('desktop portfolio loads without runtime errors and all images resolve', as
   await expect(page.locator('.public-project-card')).toHaveCount(4)
   await expect(page.locator('.project-overview')).toHaveCount(3)
   await expect(page.locator('.project-card-stack')).toHaveCount(3)
-  await expect(page.locator('.tagcloud-item')).toHaveCount(11)
+  await expect(page.locator('.tagcloud-item')).toHaveCount(20)
   await page.evaluate(() => document.fonts.ready)
   expect(await page.evaluate(() => document.fonts.check('700 48px Syncopate'))).toBeTruthy()
   for (const img of await page.locator('img').all()) {
@@ -71,6 +71,7 @@ for (const width of [1440, 390]) {
     await expect(page.locator('#loader')).toBeHidden({ timeout: 15000 })
     const card = page.locator('.public-project-card').filter({ has: page.getByRole('heading', { name: 'dheepASK', exact: true }) })
     await card.scrollIntoViewIfNeeded()
+    await card.getByRole('button', { name: 'Expand dheepASK details' }).click()
     await expect(card.locator('li')).toHaveCount(5)
     for (const title of ['Anonymous Questions & Answers', 'Inline Conversations & Threaded Replies', 'Emoji Reactions', 'Invitation-Link Rooms', 'Short Links & QR Sharing']) {
       await expect(card.locator('strong').filter({ hasText: title })).toBeVisible()
@@ -80,7 +81,7 @@ for (const width of [1440, 390]) {
     }
     const image = card.getByAltText('dheepASK anonymous Q&A platform interface')
     await expect(image).toHaveAttribute('src', '/projects/dheepask-preview.png')
-    expect(await image.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth === 1280 && element.naturalHeight === 800)).toBeTruthy()
+    await expect.poll(() => image.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth === 1280 && element.naturalHeight === 800)).toBeTruthy()
     for (const [label, href] of [['View source', 'https://github.com/DhitGT/dheepASK'], ['Live demo', 'https://ask.dheep.site']]) {
       await expect(card.getByRole('link', { name: label })).toHaveAttribute('href', href)
       await expect(card.getByRole('link', { name: label })).toHaveAttribute('target', '_blank')
@@ -137,7 +138,7 @@ test('reduced motion still shows the content and a readable skill sphere', async
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/')
   await expect(page.locator('#loader')).toBeHidden({ timeout: 15000 })
-  await expect(page.locator('.tagcloud-item')).toHaveCount(11)
+  await expect(page.locator('.tagcloud-item')).toHaveCount(20)
   await expect(page.locator('h1')).toBeVisible()
 })
 

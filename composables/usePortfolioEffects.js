@@ -201,7 +201,6 @@ export function usePortfolioEffects() {
           })
         })
       }
-      initSphere(reduced)
       if (!reduced) { initGrid(); initMatrix() }
       const observer = new IntersectionObserver(async ([entry]) => {
         if (!entry.isIntersecting) return
@@ -217,41 +216,6 @@ export function usePortfolioEffects() {
       console.error('Portfolio effects could not initialize:', error)
     }
   })
-
-  function initSphere(reduced) {
-    const container = document.querySelector('.tagcloud')
-    const labels = profile.sphere
-    container.setAttribute('aria-label', `Skills: ${labels.join(', ')}`)
-    const points = labels.map((label, i) => {
-      const node = document.createElement('span')
-      node.className = 'tagcloud-item'
-      node.textContent = label
-      container.append(node)
-      const y = 1 - (i / (labels.length - 1)) * 2
-      const theta = i * Math.PI * (3 - Math.sqrt(5))
-      return { node, x: Math.cos(theta) * Math.sqrt(1 - y * y), y, z: Math.sin(theta) * Math.sqrt(1 - y * y) }
-    })
-    let angle = .4
-    let speed = .003
-    on(container, 'pointermove', e => { speed = (e.clientX - container.getBoundingClientRect().left - container.clientWidth / 2) * .00003 })
-    on(container, 'pointerleave', () => { speed = .003 })
-    const draw = () => {
-      const radius = Math.min(container.clientWidth / 2 - 50, container.clientHeight / 2 - 10)
-      if (!reduced && !document.hidden) angle += speed
-      points.forEach(({ node, x, y, z }) => {
-        const rx = x * Math.cos(angle) - z * Math.sin(angle)
-        const rz = x * Math.sin(angle) + z * Math.cos(angle)
-        const scale = (rz + 2) / 2.4
-        node.style.transform = `translate(-50%, -50%) translate(${rx * radius}px, ${y * radius}px) scale(${scale})`
-        node.style.opacity = String((rz + 1.5) / 2.5)
-        node.style.color = rz > .5 ? '#d4ff00' : '#9ca3af'
-      })
-    }
-    draw()
-    if (!reduced) animate(draw)
-    on(window, 'resize', draw)
-    cleanup.push(() => points.forEach(point => point.node.remove()))
-  }
 
   function initGrid() {
     const canvas = document.getElementById('hero-grid')
@@ -349,9 +313,20 @@ export function usePortfolioEffects() {
       })
     }
     Events.on(render, 'afterRender', label)
-    const visibility = new IntersectionObserver(([entry]) => { runner.enabled = entry.isIntersecting && !document.hidden })
+    let rendering = true
+    const setVisible = (visible) => {
+      const running = visible && !document.hidden
+      runner.enabled = running
+      if (running && !rendering) Render.run(render)
+      else if (!running && rendering) Render.stop(render)
+      rendering = running
+    }
+    const visibility = new IntersectionObserver(([entry]) => { setVisible(entry.isIntersecting) })
     visibility.observe(container)
-    on(document, 'visibilitychange', () => { runner.enabled = !document.hidden && container.getBoundingClientRect().bottom > 0 && container.getBoundingClientRect().top < innerHeight })
+    on(document, 'visibilitychange', () => {
+      const bounds = container.getBoundingClientRect()
+      setVisible(bounds.width > 0 && bounds.height > 0 && bounds.bottom > 0 && bounds.top < innerHeight)
+    })
     cleanup.push(() => {
       visibility.disconnect()
       Events.off(render, 'afterRender', label)
