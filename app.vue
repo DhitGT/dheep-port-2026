@@ -2,8 +2,10 @@
 import fallbackProjects from './data/projects.json'
 import profile from './data/profile.json'
 const { data: projects } = await useFetch('/api/projects', { default: () => fallbackProjects })
-const featuredProjects = computed(() => projects.value.filter(project => !project.github))
-const publicProjects = computed(() => projects.value.filter(project => project.github))
+const featuredProjects = computed(() => projects.value.filter(project => !project.github && !project.url))
+const publicProjects = computed(() => projects.value
+  .filter(project => project.github || project.url)
+  .sort((a, b) => (a.sortOrder ?? Infinity) - (b.sortOrder ?? Infinity)))
 const { copyEmail } = usePortfolioEffects()
 const goToWork = () => { window.location.hash = 'work' }
 const goToAbout = () => { window.location.hash = 'about' }
@@ -289,7 +291,7 @@ const reboot = () => window.location.reload()
             <!-- SIDE QUESTS -->
             <section id="lab" class="py-20 px-6 bg-[#0a0a0a]">
   <div class="max-w-7xl mx-auto">
-    <div class="flex justify-between items-end mb-6"><h2 class="text-4xl md:text-5xl font-display font-bold">SIDE <span class="text-[#d4ff00]">QUESTS</span></h2><p class="text-xs font-mono text-gray-400 uppercase tracking-widest hidden md:block">Personal / Public GitHub</p></div>
+    <div class="flex justify-between items-end mb-6"><h2 class="text-4xl md:text-5xl font-display font-bold">SIDE <span class="text-[#d4ff00]">QUESTS</span></h2><p class="text-xs font-mono text-gray-400 uppercase tracking-widest hidden md:block">Personal / Community · Newest first</p></div>
     <p class="text-gray-500 mb-10">Personal projects in browser interaction and full-stack fundamentals.</p>
     <div class="grid md:grid-cols-2 gap-6 items-start"><PublicProjectCard v-for="project in publicProjects" :key="project.id" :project="project" /></div>
     <div class="mt-12 text-center"><a href="https://github.com/DhitGT" target="_blank" rel="noopener noreferrer" class="hover-trigger px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest hover:border-[#d4ff00] hover:text-[#d4ff00] transition-all inline-block">Explore GitHub <i class="fab fa-github ml-2" aria-hidden="true"></i></a></div>

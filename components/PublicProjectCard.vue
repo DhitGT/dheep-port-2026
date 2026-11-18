@@ -5,9 +5,9 @@ const detailId = computed(() => `sidequest-details-${props.project.id}`)
 </script>
 <template>
   <article class="public-project-card group">
-    <a :href="project.github" target="_blank" rel="noopener noreferrer" class="public-project-image hover-trigger" :aria-label="`View ${project.title.join(' ')} repository`">
+    <a :href="project.github || project.url" target="_blank" rel="noopener noreferrer" class="public-project-image hover-trigger" :aria-label="`View ${project.title.join(' ')} ${project.github ? 'repository' : 'website'}`">
       <img :src="project.image" :alt="project.imageAlt || `${project.title.join(' ')} repository preview`" loading="lazy" width="1280" height="800">
-      <span class="public-project-badge"><i class="fab fa-github" aria-hidden="true"></i> PUBLIC REPOSITORY</span>
+      <span class="public-project-badge"><i :class="project.github ? 'fab fa-github' : 'fas fa-arrow-up-right-from-square'" aria-hidden="true"></i> {{ project.github ? 'PUBLIC REPOSITORY' : 'LIVE PROJECT' }}</span>
     </a>
     <div class="public-project-header p-6 md:p-8">
       <div class="min-w-0">
@@ -30,7 +30,7 @@ const detailId = computed(() => `sidequest-details-${props.project.id}`)
         </li>
       </ul>
       <div class="flex flex-wrap gap-4 text-xs font-bold uppercase tracking-widest">
-        <a :href="project.github" target="_blank" rel="noopener noreferrer" class="public-project-link hover-trigger"><i class="fab fa-github" aria-hidden="true"></i> View source <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        <a v-if="project.github" :href="project.github" target="_blank" rel="noopener noreferrer" class="public-project-link hover-trigger"><i class="fab fa-github" aria-hidden="true"></i> View source <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
         <a v-if="project.url" :href="project.url" target="_blank" rel="noopener noreferrer" class="public-project-link hover-trigger">{{ project.demoLabel || 'Play game' }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
       </div>
       <p class="text-gray-600 text-xs mt-5">{{ project.imageCaption }}</p>

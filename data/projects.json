@@ -82,28 +82,58 @@
     "visibility": "Private / internal application"
   },
   {
-    "id": 4,
-    "label": "Personal 004 / Browser Game",
+    "id": 8,
+    "name": "KanaLearn",
+    "label": "Personal 008 / Learning Application",
+    "category": "Personal Project / Learning Application",
     "title": [
-      "1945",
-      "WAR GAME"
+      "KanaLearn"
     ],
-    "description": "A browser game inspired by the Indonesian independence era. An experiment in game logic, animation, player interaction, statistics, a shop, and background music.",
+    "projectType": "Japanese & Korean Character Learning Platform",
     "role": "Personal Project Developer",
+    "description": "An interactive learning application for Hiragana, Katakana, and Hangul, combining character lessons, practice challenges, typing races, and browser-based learning progress without requiring an account.",
     "tags": [
-      "JavaScript",
-      "HTML",
-      "CSS"
+      "Nuxt",
+      "Vue",
+      "Nuxt UI"
+    ],
+    "features": [
+      {
+        "title": "Japanese & Korean Character Lessons",
+        "description": "Learn Hiragana, Katakana, and Hangul through character cards and small lesson groups."
+      },
+      {
+        "title": "Interactive Practice",
+        "description": "Practice with multiple-choice and typed answers, including relaxed, Time Attack, and Sprint modes."
+      },
+      {
+        "title": "Typing Race",
+        "description": "Build reading speed with timed typing challenges, WPM and accuracy results, and a ghost from previous attempts."
+      },
+      {
+        "title": "Learning Progress",
+        "description": "Track practice accuracy and history, revisit characters, and explore learning journeys and achievements."
+      },
+      {
+        "title": "Browser-Based Progress & Backups",
+        "description": "Start without an account, keep progress in the browser, and export or import a backup when moving devices."
+      }
     ],
     "highlights": [
-      "Browser gameplay and animation.",
-      "Player statistics and shop functionality."
+      "Japanese & Korean Character Lessons: Learn Hiragana, Katakana, and Hangul through character cards and small lesson groups.",
+      "Interactive Practice: Practice with multiple-choice and typed answers, including relaxed, Time Attack, and Sprint modes.",
+      "Typing Race: Build reading speed with timed typing challenges, WPM and accuracy results, and a ghost from previous attempts.",
+      "Learning Progress: Track practice accuracy and history, revisit characters, and explore learning journeys and achievements.",
+      "Browser-Based Progress & Backups: Start without an account, keep progress in the browser, and export or import a backup when moving devices."
     ],
-    "image": "/projects/1945-preview.png",
-    "imageCaption": "Menu preview rendered from the repository's HTML, CSS, and assets.",
-    "url": "https://1945.dheep.site",
-    "github": "https://github.com/DhitGT/1945",
-    "visibility": "Public repository"
+    "image": "/projects/kanalearn-preview.png",
+    "imageAlt": "KanaLearn Japanese and Korean character learning website homepage",
+    "imageCaption": "Screenshot of the live KanaLearn homepage. Progress is stored in the browser with export and import backups.",
+    "url": "https://kanalearn.dheep.site/",
+    "demoLabel": "Live demo",
+    "github": null,
+    "visibility": "Public website",
+    "sortOrder": 0
   },
   {
     "id": 5,
@@ -161,7 +191,68 @@
     "url": "https://ask.dheep.site",
     "demoLabel": "Live demo",
     "github": "https://github.com/DhitGT/dheepASK",
-    "visibility": "Public repository"
+    "visibility": "Public repository",
+    "sortOrder": 1
+  },
+  {
+    "id": 7,
+    "name": "FOREKS",
+    "title": [
+      "FOREKS"
+    ],
+    "label": "Personal 007 / Web Application",
+    "category": "Personal Project / Web Application",
+    "subtitle": "Extracurricular Management Platform",
+    "projectType": "Extracurricular Management Platform",
+    "role": "Front-End Developer",
+    "description": "A web application for managing school extracurricular organizations, with institution and organization dashboards for members, attendance, cash records, activity reports, and public profiles.",
+    "tags": [
+      "Nuxt 2",
+      "Vue 2",
+      "JavaScript",
+      "Vuex",
+      "Vuetify 2",
+      "Tailwind CSS 3",
+      "Axios",
+      "Quill",
+      "Vue Carousel"
+    ],
+    "features": [
+      {
+        "title": "Institution & Organization Dashboards",
+        "description": "Separate dashboard layouts and pages support institution-level oversight and organization-level administration."
+      },
+      {
+        "title": "Member Management",
+        "description": "Member-management interfaces and API integration support organizing extracurricular membership information."
+      },
+      {
+        "title": "Attendance Management",
+        "description": "Attendance pages include code-based routes and API requests for creating, editing, and deleting attendance records."
+      },
+      {
+        "title": "Cash Records & Activity Reports",
+        "description": "Dedicated interfaces support cash income and expense records alongside organization activity reporting."
+      },
+      {
+        "title": "Public Organization Profiles",
+        "description": "Public pages present organization information, activities, members, and galleries, with a dashboard interface for editing profile content."
+      }
+    ],
+    "highlights": [
+      "Institution & Organization Dashboards: Separate dashboard layouts and pages support institution-level oversight and organization-level administration.",
+      "Member Management: Member-management interfaces and API integration support organizing extracurricular membership information.",
+      "Attendance Management: Attendance pages include code-based routes and API requests for creating, editing, and deleting attendance records.",
+      "Cash Records & Activity Reports: Dedicated interfaces support cash income and expense records alongside organization activity reporting.",
+      "Public Organization Profiles: Public pages present organization information, activities, members, and galleries, with a dashboard interface for editing profile content."
+    ],
+    "image": "/projects/foreks-preview.png",
+    "imageAlt": "FOREKS extracurricular management application interface",
+    "imageCaption": "Homepage screenshot rendered locally from the repository. Dashboard workflows require a separate backend and have not been verified end-to-end.",
+    "github": "https://github.com/DhitGT/FOREKS",
+    "url": null,
+    "visibility": "Public repository",
+    "sortOrder": 2
   },
   {
     "id": 6,
@@ -221,65 +312,32 @@
     "github": "https://github.com/DhitGT/KOPPLING",
     "url": "https://koppling.dheep.site/",
     "demoLabel": "Live demo",
-    "visibility": "Public repository"
+    "visibility": "Public repository",
+    "sortOrder": 3
   },
   {
-    "id": 7,
-    "name": "FOREKS",
+    "id": 4,
+    "label": "Personal 004 / Browser Game",
     "title": [
-      "FOREKS"
+      "1945",
+      "WAR GAME"
     ],
-    "label": "Personal 007 / Web Application",
-    "category": "Personal Project / Web Application",
-    "subtitle": "Extracurricular Management Platform",
-    "projectType": "Extracurricular Management Platform",
-    "role": "Front-End Developer",
-    "description": "A web application for managing school extracurricular organizations, with institution and organization dashboards for members, attendance, cash records, activity reports, and public profiles.",
+    "description": "A browser game inspired by the Indonesian independence era. An experiment in game logic, animation, player interaction, statistics, a shop, and background music.",
+    "role": "Personal Project Developer",
     "tags": [
-      "Nuxt 2",
-      "Vue 2",
       "JavaScript",
-      "Vuex",
-      "Vuetify 2",
-      "Tailwind CSS 3",
-      "Axios",
-      "Quill",
-      "Vue Carousel"
-    ],
-    "features": [
-      {
-        "title": "Institution & Organization Dashboards",
-        "description": "Separate dashboard layouts and pages support institution-level oversight and organization-level administration."
-      },
-      {
-        "title": "Member Management",
-        "description": "Member-management interfaces and API integration support organizing extracurricular membership information."
-      },
-      {
-        "title": "Attendance Management",
-        "description": "Attendance pages include code-based routes and API requests for creating, editing, and deleting attendance records."
-      },
-      {
-        "title": "Cash Records & Activity Reports",
-        "description": "Dedicated interfaces support cash income and expense records alongside organization activity reporting."
-      },
-      {
-        "title": "Public Organization Profiles",
-        "description": "Public pages present organization information, activities, members, and galleries, with a dashboard interface for editing profile content."
-      }
+      "HTML",
+      "CSS"
     ],
     "highlights": [
-      "Institution & Organization Dashboards: Separate dashboard layouts and pages support institution-level oversight and organization-level administration.",
-      "Member Management: Member-management interfaces and API integration support organizing extracurricular membership information.",
-      "Attendance Management: Attendance pages include code-based routes and API requests for creating, editing, and deleting attendance records.",
-      "Cash Records & Activity Reports: Dedicated interfaces support cash income and expense records alongside organization activity reporting.",
-      "Public Organization Profiles: Public pages present organization information, activities, members, and galleries, with a dashboard interface for editing profile content."
+      "Browser gameplay and animation.",
+      "Player statistics and shop functionality."
     ],
-    "image": "/projects/foreks-preview.png",
-    "imageAlt": "FOREKS extracurricular management application interface",
-    "imageCaption": "Homepage screenshot rendered locally from the repository. Dashboard workflows require a separate backend and have not been verified end-to-end.",
-    "github": "https://github.com/DhitGT/FOREKS",
-    "url": null,
-    "visibility": "Public repository"
+    "image": "/projects/1945-preview.png",
+    "imageCaption": "Menu preview rendered from the repository's HTML, CSS, and assets.",
+    "url": "https://1945.dheep.site",
+    "github": "https://github.com/DhitGT/1945",
+    "visibility": "Public repository",
+    "sortOrder": 4
   }
 ]
