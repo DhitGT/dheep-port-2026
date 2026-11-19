@@ -22,6 +22,10 @@ Do not commit `.env` or use a `NUXT_PUBLIC_` prefix for secrets. Rebuild/redeplo
 
 `NUXT_API_BASE` is optional. Leave it unset if Laravel is not deployed: projects use local JSON and the contact form reports that the service is unavailable. To enable contact submissions, deploy Laravel separately and set `NUXT_API_BASE` to its HTTPS API URL. Do not use `127.0.0.1:8000` in Vercel.
 
+## Web Analytics
+
+Vercel Web Analytics is initialized once after hydration by `plugins/analytics.client.ts` using `@vercel/analytics`. Enable **Web Analytics** in the Vercel project dashboard and redeploy to start collecting page views.
+
 ## Spotify account setup
 
 For a new connection, fill `NUXT_SPOTIFY_CLIENT_ID` and `NUXT_SPOTIFY_CLIENT_SECRET` in your local `.env` and register `http://127.0.0.1:8989/callback` in Spotify Developer Dashboard. Run `npm run spotify:connect`, open the printed authorization URL, and authorize your account. The helper saves `NUXT_SPOTIFY_REFRESH_TOKEN` privately in `.env`; restart the dev server. An already connected account can use its existing refresh token in Vercel without signing in again.
